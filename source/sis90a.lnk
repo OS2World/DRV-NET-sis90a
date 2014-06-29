@@ -1,0 +1,88 @@
+====================================================================
+Silicon Integrated Systems SiS900 Another NDIS 2.0.1 MAC driver 1.03
+====================================================================
+
+1.Introduction
+
+SiS900 seems to be the NSC DP83815 variation, to be custumized 
+to M$ Windows Wake-On-LAN. The registers of the chip is almost 
+same as that of DP83815.
+I've modified NSC DP83815 Another driver into SiS900 driver.
+
+SiS provides the offcial driver SIS900.OS2, that is included in 
+sl114.zip. You can download it on the SiS web site.
+
+Included files are:
+sis90a.os2	NDIS 2.0.1 MAC driver
+sis90a.nif	Network Information File
+sis90a.sym	Symbol Map file
+sis90a.lnk	Document (this file)
+source.zip	source files
+tool.zip	mac address query tool. source and binary.
+
+You could download the latest file on the gomi:NDIS MAC Drivers page,
+URL http://www.os2warp.be/index2.php?name=gomindis .
+
+
+2.No Warranty
+
+This code is provided 'AS IS' and any warranties are disclaimed.
+Use your own risk.
+
+
+3.Considerable configuration keywords
+
+There is a restriction among TXEARLY(TxDrth), TXFLTH and TXMXDMA.
+  FIFOsize(2KB) - TXEARLY >= TXFLTH > TXMXDMA
+Be careful if you want to modify these parameters.
+
+
+4.Note
+
+- No test on SMP environment. (I gess it can work.)
+- Wake-On-Lan is not supported. No plan.
+- The tested chip revision is 02 only.
+- I hear that no EEPROM is available in some implementations.
+   Set MAC address by hand with NETADDRESS keyword.
+
+
+5.Redistribution with modification
+
+Your should add your copyright notice, 
+"(c)Copyright 2005 your name. All rights reserved."
+and remove mine,
+"(c)Copyright 2005 chagrin. Some rights reserved."
+
+This means that the modified binary/source is not mine, but yours, 
+regardless of the degree of the modification. 
+You can redistribute, of course, that for the commercial purpose 
+without any fee to me, without releasing the source, if you want.
+
+Don't forget that I'm never liable for your product.
+(You, also, should add a disclaimer.)
+
+
+6.History
+
+ver.1.03 - 07/23, 2005.
+- APC register is checked if the chip revision si 91. Trial for SiS963.
+
+ver.1.02 - 07/19, 2005.
+- 1 new keyword, NETADDRESS, is added. Trial for SiS963, revision 91.
+
+ver.1.01 - 07/14, 2005.
+- Reset logic was modified.(from solaris driver)
+- Query MAC address method was modified.(from solaris driver)
+- 256bits muliticast hash table is supported.(from solaris driver)
+
+ver.1.00 - 03/03, 2004.
+-  Initial release. Based on NSC DP83815 Another 1.04.
+
+
+7.Contact
+
+Access os2warp.be Technical Support Center,
+URL http://www.os2warp.be/support/
+ or
+Email to YANAGIHARA Nobuyuki,
+ <VYL00513@nifty.ne.jp>

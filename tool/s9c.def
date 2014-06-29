@@ -1,0 +1,18 @@
+name	s9c	windowcompat
+description	'@#chagrin:1.00#@SiS900 check tool'
+
+exetype os2
+protmode
+stacksize 3072
+
+
+imports
+Dos16Exit       = DOSCALLS.5
+Dos16DevIOCtl   = DOSCALLS.53
+Dos16Close      = DOSCALLS.59
+Dos16Open       = DOSCALLS.70
+Dos16PutMessage = MSG.1
+_s9c_eeprom     = s9ci.1
+_s9c_peeprom    = s9ci.2
+_s9c_reload     = s9ci.3
+_s9c_bridge     = s9ci.4

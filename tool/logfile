@@ -1,0 +1,10 @@
+SiS900 MAC address query tool
+Chip Revision is 02
+Direct serial EEPROM access
+00074017BEE5
+Pre-requested serial EEPROM access
+timeout... 
+Reload pmatch filter contents
+000000000000
+Query to ISA bridge
+ISA Bridge 0x1039/0x0008 was not found.

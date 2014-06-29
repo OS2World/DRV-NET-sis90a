@@ -1,0 +1,17 @@
+library	s9ci
+description	'@#chagrin:1.00#@SiS900 check tool IOPL dll'
+
+exetype os2
+protmode
+
+segments
+seg_i	class	'CODE' IOPL
+
+imports
+DosIODelayCnt = DOSCALLS.427
+
+exports
+_s9c_eeprom	@1 3
+_s9c_peeprom	@2 3
+_s9c_reload	@3 3
+_s9c_bridge	@4 3
